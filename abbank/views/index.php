@@ -33,10 +33,13 @@ taoKetNoi($link);
     $ten = mysqli_fetch_assoc($timten);
     $timrole = chayTruyVanTraVeDL($link, "select * from phan_quyen where role = '{$ten['role']}' ");
     $role = mysqli_fetch_assoc($timrole);
+    $timdvkd = chayTruyVanTraVeDL($link, "select * from dvkd where ma_dvkd = '{$ten['ma_dvkd']}' ");
+    $dvkd = mysqli_fetch_assoc($timdvkd);
     echo"
     <div class='container-fluid' style='margin:2rem;'>
     <p>Tên: ".$ten['ten_ns']."</p>
     <p>Chức vụ: ".$role['ten_role']."</p>
+    <p>Đơn vị kinh doanh: ".$dvkd['ten_dvkd']." - ".$dvkd['ma_dvkd']."</p>
     </div>
     ";}?>
 	
